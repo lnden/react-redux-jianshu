@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+}
+li{
+    list-style: none;
+    overflow: auto;
+    margin:10px;
+}
+p{
+    margin:0;
+    padding:0;
+}
+.btn{
+    cursor:pointer;
+    margin: 0 10px;
+
+}
+.input {
+    border:1px solid #f00;
+}
+
+.content-box{
+    background: aliceblue;
+    color:#090;
+    width:200px;
+    float: left;
+}
