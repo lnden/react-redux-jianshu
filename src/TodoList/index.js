@@ -15,6 +15,8 @@ export default class Index extends Component {
 
     handleChange = (e) => {
         const value = e.target.value;
+        // 可以使用ref获取到元素
+        // console.log(this.input)
         this.setState(() => ({
             inputValue: value
         }))
@@ -33,7 +35,12 @@ export default class Index extends Component {
         this.setState((prevState) => ({
             list: [...prevState.list, prevState.inputValue],
             inputValue: ''
-        }))
+        }),()=>{
+            console.log('异步执行成功之后才会执行')
+            console.log(this.ul.querySelectorAll('li').length)
+        })
+        // 使用ref获取元素永远都是少一位,setState异步函数等会执行
+        console.log(this.ul.querySelectorAll('li').length)
         // this.setState({
         //     list: [...list, inputValue],
         //     inputValue: ''
@@ -79,10 +86,11 @@ export default class Index extends Component {
                         type="text"
                         value={inputValue}
                         onChange={this.handleChange}
+                        ref={(input)=>{this.input = input}}
                     />
                     <button className="btn" onClick={this.handleSubmit}>提交</button>
                 </Fragment>
-                <ul>{this.getTodoItem()}</ul>
+                <ul ref={(ul)=>{this.ul = ul}}>{this.getTodoItem()}</ul>
                 <Test content={this.state.inputValue}/>
             </div>
         )

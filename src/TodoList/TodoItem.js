@@ -2,6 +2,17 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class TodoItem extends Component {
+
+    // 可以减少render 
+    shouldComponentUpdate(nextProps,nextState){
+        // console.log(nextProps.content,nextState)
+        if(nextProps.content!==this.props.content){
+            return true
+        }else{
+            return false 
+        }
+    }
+
     handleClick = () => {
         const {handleDelete, index} = this.props;
         handleDelete(index)
