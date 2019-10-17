@@ -105,3 +105,10 @@ Diff, diffrence
 
 ### 生命周期
 生命周期函数指在某一个时刻组件会自动调用执行的函数
+
+### Animation
+- transition
+- animation
+- reacr-transition-group
+    - CSSTransition
+    - TransitionGroup
