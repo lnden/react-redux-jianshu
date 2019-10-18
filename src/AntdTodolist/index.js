@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Input,Button,List,message} from 'antd'
 import store from '../store'
+import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM} from '../store/actionTypes';
 import 'antd/dist/antd.css';
 
 const ListItem = List.Item;
@@ -17,7 +18,7 @@ class AntdTodolist extends Component {
 
     handleInputChange(e) {
         const action = {
-            type: 'change_input_value',
+            type: CHANGE_INPUT_VALUE,
             value: e.target.value
         };
         store.dispatch(action);
@@ -31,7 +32,7 @@ class AntdTodolist extends Component {
     handleSubmit() {
         if(this.state.inputValue){
             const action = {
-                type: 'add_todo_item',
+                type: ADD_TOTO_ITEM,
                 // value: this.state.inputValue, 该值可以直接在store里面获取
             };
             store.dispatch(action)
@@ -42,7 +43,7 @@ class AntdTodolist extends Component {
 
     handleDeteled(index) {
         const action = {
-            type: 'deleted_todo_item',
+            type: DELETED_TODO_ITEM,
             index
         };
         store.dispatch(action)

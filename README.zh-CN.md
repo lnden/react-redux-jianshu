@@ -117,3 +117,4 @@ Diff, diffrence
 ### Redux
 使用 redux、antd 编写一个TodoList
 - yarn add antd 
+- yarn add redux 
