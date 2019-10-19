@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {Input,Button,List,message} from 'antd'
 import store from '../store'
-import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM} from '../store/actionTypes';
+// import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM} from '../store/actionTypes';
+import {getInputChangeAction,getAddItemAction,getDeletedItemAction} from '../store/actionCreators'
 import 'antd/dist/antd.css';
 
 const ListItem = List.Item;
@@ -17,10 +18,11 @@ class AntdTodolist extends Component {
     }
 
     handleInputChange(e) {
-        const action = {
-            type: CHANGE_INPUT_VALUE,
-            value: e.target.value
-        };
+        // const action = {
+        //     type: CHANGE_INPUT_VALUE,
+        //     value: e.target.value
+        // };
+        const action = getInputChangeAction(e.target.value)
         store.dispatch(action);
     }
 
@@ -31,10 +33,11 @@ class AntdTodolist extends Component {
 
     handleSubmit() {
         if(this.state.inputValue){
-            const action = {
-                type: ADD_TOTO_ITEM,
+            // const action = {
+                // type: ADD_TOTO_ITEM,
                 // value: this.state.inputValue, 该值可以直接在store里面获取
-            };
+            // };
+            const action = getAddItemAction()
             store.dispatch(action)
         }else{
             message.info('输入框不能为空')
@@ -42,10 +45,11 @@ class AntdTodolist extends Component {
     }
 
     handleDeteled(index) {
-        const action = {
-            type: DELETED_TODO_ITEM,
-            index
-        };
+        // const action = {
+        //     type: DELETED_TODO_ITEM,
+        //     index
+        // };
+        const action = getDeletedItemAction(index)
         store.dispatch(action)
     }
 

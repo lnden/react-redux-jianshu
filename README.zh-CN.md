@@ -118,3 +118,13 @@ Diff, diffrence
 使用 redux、antd 编写一个TodoList
 - yarn add antd 
 - yarn add redux 
+
+store 是唯一的
+
+只有 store 能改变自己的内容
+
+reducer必须是纯函数（纯函数指的是，给固定的输入，就一定会有固定的输出，而且不会有任何副作用）
+
+副作用指的是，传递进来的参数进行修改
+
+固定输入，就一定会有固定的输出是指 传入state,action就一定会返回对应的内容
