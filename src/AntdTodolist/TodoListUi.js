@@ -23,7 +23,7 @@ const TodoListUi = (props) => {
 					return (
 						<ListItem>
 							<span>{item}</span>
-							<Button type="primary" onClick={(index)=>{props.handleDeteled(index)}}>删除</Button>
+							<Button type="primary" onClick={()=>props.handleDeteled(index)}>删除</Button>
 						</ListItem>
 					)
 				}
