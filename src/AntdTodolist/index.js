@@ -2,10 +2,9 @@ import React, {Component} from 'react'
 import {message} from 'antd'
 import store from '../store'
 // import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM} from '../store/actionTypes';
-import {getInputChangeAction,getAddItemAction,getDeletedItemAction,InitListAction} from '../store/actionCreators'
+import {getInputChangeAction,getAddItemAction,getDeletedItemAction,getTodoList     } from '../store/actionCreators'
 import 'antd/dist/antd.css';
 import TodoListUi from './TodoListUi';
-import axios from 'axios'
 
 class AntdTodolist extends Component {
     constructor(props){
@@ -19,11 +18,8 @@ class AntdTodolist extends Component {
     }
 
     componentDidMount() {
-        axios.get('mock/list.json').then((res)=>{
-            const data = res.data.list;
-            const action = InitListAction(data)
-            store.dispatch(action)
-        })
+        const  action = getTodoList();
+        store.dispatch(action)
     }
 
     handleInputChange(e) {
