@@ -1,8 +1,8 @@
-import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM,INIT_LIST_ACTION,GET_INIT_LIST} from "./actionTypes";
+import {CHANGE_INPUT_VALUE, ADD_TOTO_ITEM, DELETED_TODO_ITEM, INIT_LIST_ACTION} from "./actionTypes";
 import axios from 'axios'
 
 export const getInputChangeAction = (value) => ({
-    type: CHANGE_INPUT_VALUE,   
+    type: CHANGE_INPUT_VALUE,
     value
 });
 
@@ -23,14 +23,10 @@ export const InitListAction = (data) => ({
 export const getTodoList = () => {
     return (dispatch) => {
         // 可以执行异步操作
-        axios.get('mock/list.json').then((res)=>{
+        axios.get('mock/list.json').then((res) => {
             const data = res.data.list;
-            const action = InitListAction(data)
+            const action = InitListAction(data);
             dispatch(action)
         })
     }
 };
-
-export const getInitList = () => ({
-    type: GET_INIT_LIST,
-});

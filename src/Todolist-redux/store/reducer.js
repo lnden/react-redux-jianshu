@@ -1,28 +1,26 @@
-import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM,INIT_LIST_ACTION} from './actionTypes';
-
 const defaultState = {
-    inputValue: '',
-    list: [ ]
+    inputValue: 'Todolist antd',
+    list: []
 };
 
 // state整个仓库所有的数据, action 是借书的 语句
 export default (state = defaultState, action) => {
     let newState = null;
-    switch(action.type){
-        case CHANGE_INPUT_VALUE:
+    switch (action.type) {
+        case 'change_input_value':
             newState = JSON.parse(JSON.stringify(state));
             newState.inputValue = action.value;
             return newState;
-        case ADD_TOTO_ITEM:
+        case 'add_todo_item':
             newState = JSON.parse(JSON.stringify(state));
             newState.list.push(newState.inputValue);
             newState.inputValue = '';
             return newState;
-        case DELETED_TODO_ITEM:
+        case 'deleted_todo_item':
             newState = JSON.parse(JSON.stringify(state));
-            newState.list.splice(action.index,1);
+            newState.list.splice(action.index, 1);
             return newState;
-        case INIT_LIST_ACTION:
+        case 'init_list_item':
             newState = JSON.parse(JSON.stringify(state));
             newState.list = action.data;
             return newState;
