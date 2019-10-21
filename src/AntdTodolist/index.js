@@ -2,7 +2,12 @@ import React, {Component} from 'react'
 import {message} from 'antd'
 import store from '../store'
 // import {CHANGE_INPUT_VALUE,ADD_TOTO_ITEM,DELETED_TODO_ITEM} from '../store/actionTypes';
-import {getInputChangeAction,getAddItemAction,getDeletedItemAction,getTodoList     } from '../store/actionCreators'
+import {
+    getInputChangeAction,
+    getAddItemAction,
+    getDeletedItemAction,
+    getInitList,
+} from '../store/actionCreators'
 import 'antd/dist/antd.css';
 import TodoListUi from './TodoListUi';
 
@@ -18,7 +23,8 @@ class AntdTodolist extends Component {
     }
 
     componentDidMount() {
-        const  action = getTodoList();
+        const action = getInitList();
+        // 经过配置redux-saga，不仅reducer可以接受，sagas也可以接受
         store.dispatch(action)
     }
 
