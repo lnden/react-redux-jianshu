@@ -141,3 +141,8 @@ actionCreator action函数内返回一个对象
 - Todolist-redux-thunk //使用 redux-thunk 中间件，action可以返回一个函数
 - Todolist-redux-saga //使用 redux-saga 中间件，请求抽离sagas.js
 - Todolist-react-redux //使用 react-redux API 进行构建
+
+### Header Component
+- basic complete
+- useing react-redux
+- useing immutable
