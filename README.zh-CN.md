@@ -146,3 +146,4 @@ actionCreator action函数内返回一个对象
 - basic complete
 - useing react-redux
 - useing immutable
+- useing redux-immutable //统一store使用immutable对象
