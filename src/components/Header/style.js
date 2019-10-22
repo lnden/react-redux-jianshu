@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div`
     box-sizing: border-box;
 `;
 export const Logo = styled.a.attrs({
-    href:'/'
+    href: '/'
 })`
     height: 58px;
     position: absolute;
@@ -63,20 +63,6 @@ export const SearchWrapper = styled.div`
             color: #fff;
         }
     }
-    .slide-enter {
-        width: 160px;
-        transition: all .3s ease-out;
-    }
-    .slide-enter-active {
-        width: 240px;
-    }
-    .slide-exit {
-        width: 240px;
-        transition: all .3s ease-out;
-    }
-    .slide-exit-active {
-        width: 160px;
-    }
 `;
 
 export const NavSearch = styled.input.attrs({
@@ -101,6 +87,20 @@ export const NavSearch = styled.input.attrs({
     }
     &.focused {
         width: 200px;
+    }
+    &.slide-enter {
+        width: 160px;
+        transition: all .3s ease-out;
+    }
+    &.slide-enter-active {
+        width: 200px;
+    }
+    &.slide-exit {
+        width: 200px;
+        transition: all .3s ease-out;
+    }
+    &.slide-exit-active {
+        width: 160px;
     }
 `;
 

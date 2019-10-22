@@ -19,17 +19,25 @@ import {Globalstyle as Globaliconfont} from './statics/iconfont/iconfont'
 //     </Provider>
 // );
 
+import {Provider} from 'react-redux'
+import store from './store'
+
+const App = (
+    <Provider store={store}>
+        <Header/>
+    </Provider>
+);
 
 ReactDOM.render(
     <section>
         {/*<TodoList />*/}
-        {/*{App}*/}
-        <Globalstyle />
-        <Globaliconfont />
-        <Header />
+        <Globalstyle/>
+        <Globaliconfont/>
+        {App}
     </section>,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
 
 if (module.hot) {
-  module.hot.accept();
+    module.hot.accept();
 }
