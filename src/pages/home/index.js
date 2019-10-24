@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import Writer from './components/Writer'
 import List from './components/List'
@@ -6,7 +6,7 @@ import Recommend from './components/Recommend'
 import {HomeWrapper, HomeLeft, HomeRight, BackTop} from "./style";
 import {actionCreators} from "./store";
 
-class Home extends Component {
+class Home extends PureComponent {
 
     componentDidMount() {
         this.props.changeHomeData();
@@ -19,8 +19,8 @@ class Home extends Component {
 
     handleScrollTop = () => {
         const sTop = document.documentElement.scrollTop + document.body.scrollTop;
-        window.scrollBy(0, -(sTop/10));
-        let scrolldelay = setTimeout(this.handleScrollTop, sTop<100?16:3);
+        window.scrollBy(0, -(sTop / 10));
+        let scrolldelay = setTimeout(this.handleScrollTop, sTop < 100 ? 16 : 3);
         if (sTop === 0) {
             clearTimeout(scrolldelay)
         }
@@ -68,7 +68,7 @@ const mapDispatchToProps = (dispatch) => {
             if (document.documentElement.scrollTop > 300) {
                 const action = actionCreators.toggleTopShow(true);
                 dispatch(action)
-            }else{
+            } else {
                 const action = actionCreators.toggleTopShow(false);
                 dispatch(action)
             }

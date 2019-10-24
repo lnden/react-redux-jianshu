@@ -152,5 +152,18 @@ actionCreator action函数内返回一个对象
     - using react-router-dom
     - using axios
     - using ant-design
+    
+性能优化，修改Home下组件Component为PureComponent，因为我们的业务使用的是immutable，所以可以直接替换PureComponent
 
+如果不使用immutable 来使用PureComponent会遇见底层的一些坑（待入坑）
+
+#### 获取URL参数的两种方式
+
+- 使用动态路由Route path="/detail/:id"
+
+获取方式：this.props.match.params.id  // 1
+
+- 使用Link跳转的时候 to={`/detail?id=${item.id}`}, 修改path="/detail"
+
+获取方式：this.props.location.search  // ?id=1
  
