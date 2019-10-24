@@ -9,7 +9,7 @@ const homeData = (result) => ({
 });
 
 const ListData = (result, articlePage) => ({
-    type: actionTypes.CHANGE_LIST_DATA,
+    type: actionTypes.ADD_ARTICLE_LIST,
     articleList: result.articleList,
     articlePage: articlePage + 1
 });
@@ -32,4 +32,9 @@ export const getMoreData = (articlePage) => {
             dispatch(action)
         })
     }
+
 };
+export const toggleTopShow = (show) => ({
+    type: actionTypes.TOGGLE_SCROLL_TOP,
+    showScroll: show
+});
