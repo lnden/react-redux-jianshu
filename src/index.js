@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Globalstyle} from './style.js'
-import Header from './components/Header'
 import {Globalstyle as Globaliconfont} from './statics/iconfont/iconfont'
+import App from './App'
 
 // import TodoList from './TodoList';
 // import Transition from './Transition'
@@ -19,21 +19,14 @@ import {Globalstyle as Globaliconfont} from './statics/iconfont/iconfont'
 //     </Provider>
 // );
 
-import {Provider} from 'react-redux'
-import store from './store'
-
-const App = (
-    <Provider store={store}>
-        <Header/>
-    </Provider>
-);
 
 ReactDOM.render(
     <section>
         {/*<TodoList />*/}
+        {/*{App}*/}
         <Globalstyle/>
         <Globaliconfont/>
-        {App}
+        <App/>
     </section>,
     document.getElementById('root')
 );
