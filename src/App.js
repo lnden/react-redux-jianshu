@@ -5,6 +5,7 @@ import store from './store'
 import Header from './components/Header'
 import Home from './pages/home'
 import Detail from './pages/detail'
+import 'antd/dist/antd.css';
 
 class App extends Component {
     render() {

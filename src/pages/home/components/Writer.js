@@ -16,14 +16,14 @@ class Writer extends Component {
                     {
                         writerList.map((item) => {
                             return (
-                                <WriterItem>
-                                    <a href="#" className="avatar">
+                                <WriterItem key={item.get('id')}>
+                                    <a href="www.baidu.com" className="avatar">
                                         <img
                                             src={item.get('imgUrl')}
                                             alt="avatar"/>
                                     </a>
-                                    <a href="#" className="attention">关注</a>
-                                    <a href="#" className="name">{item.get('name')}</a>
+                                    <a href="www.baidu.com" className="attention">关注</a>
+                                    <a href="www.baidu.com" className="name">{item.get('name')}</a>
                                     <p>{item.get('desc')}</p>
                                 </WriterItem>
                             )
