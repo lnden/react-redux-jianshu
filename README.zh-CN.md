@@ -142,8 +142,15 @@ actionCreator action函数内返回一个对象
 - Todolist-redux-saga //使用 redux-saga 中间件，请求抽离sagas.js
 - Todolist-react-redux //使用 react-redux API 进行构建
 
-### Header Component
-- basic complete
-- useing react-redux
-- useing immutable
-- useing redux-immutable //统一store使用immutable对象
+### Jianshu Project Start
+- Header
+- Home
+    - using redux
+    - using redux-thunk
+    - using react-immutable
+    - using styled-components
+    - using react-router-dom
+    - using axios
+    - using ant-design
+
+ 

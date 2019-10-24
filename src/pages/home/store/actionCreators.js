@@ -8,12 +8,28 @@ const homeData = (result) => ({
     writerList: result.writerList,
 });
 
+const ListData = (result, articlePage) => ({
+    type: actionTypes.CHANGE_LIST_DATA,
+    articleList: result.articleList,
+    articlePage: articlePage + 1
+});
+
 export const getHomeInfo = () => {
     return (dispatch) => {
-        request.getHomeInfo().then(res=>{
+        request.getHomeInfo().then(res => {
             const result = res.data.data;
             const action = homeData(result);
             dispatch(action)
         });
+    }
+};
+
+export const getMoreData = (articlePage) => {
+    return (dispatch) => {
+        request.getMoreData({page: articlePage}).then(res => {
+            const result = res.data.data;
+            const action = ListData(result, articlePage);
+            dispatch(action)
+        })
     }
 };
