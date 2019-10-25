@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
     height: 58px;
     border-bottom: 1px solid #f0f0f0;
     box-sizing: border-box;
+    z-index: 1;
 `;
 export const Logo = styled.div`
     height: 58px;
@@ -32,6 +33,7 @@ export const NavItem = styled.div`
     padding: 0 15px;
     font-size: 17px;
     color: #333;
+    cursor: pointer;
     &.left {
         float: left;
     }

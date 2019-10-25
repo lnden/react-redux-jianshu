@@ -5,6 +5,8 @@ import store from './store'
 import Header from './components/Header'
 import Home from './pages/home'
 import Detail from './pages/detail'
+import Login from './pages/login'
+import Write from './pages/write'
 import 'antd/dist/antd.css';
 
 class App extends Component {
@@ -13,10 +15,10 @@ class App extends Component {
             <Provider store={store}>
                 <BrowserRouter>
                     <Header/>
-                    <div>
-                        <Route path="/" exact component={Home}></Route>
-                        <Route path="/detail/:id" component={Detail}></Route>
-                    </div>
+                    <Route path="/" exact component={Home}></Route>
+                    <Route path="/detail/:id" component={Detail}></Route>
+                    <Route path="/login" component={Login}></Route>
+                    <Route path="/write" component={Write}></Route>
                 </BrowserRouter>
             </Provider>
         )
