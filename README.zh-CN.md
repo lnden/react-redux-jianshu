@@ -152,6 +152,7 @@ actionCreator action函数内返回一个对象
     - using react-router-dom
     - using axios
     - using ant-design
+- login
     
 性能优化，修改Home下组件Component为PureComponent，因为我们的业务使用的是immutable，所以可以直接替换PureComponent
 
@@ -167,3 +168,12 @@ actionCreator action函数内返回一个对象
 
 获取方式：this.props.location.search  // ?id=1
  
+#### 异步加载组件 react-loadable
+
+使用异步组件之后，组件内获取url值报错: this.props.match.params.id
+loadable可以获取路由里面的内容，深一层的detail组件没办法获取。
+解决：使用withRouter使得组件拥有router的权利
+```
+import {withRouter} from 'react-router-dom'
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));
+```

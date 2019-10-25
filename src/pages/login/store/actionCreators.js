@@ -10,7 +10,6 @@ export const getLogin = (accout, password) => {
     return (dispatch) => {
         request.getLogin({
             username: accout,
-            username: accout,
             password: password
         }).then(res => {
             const result = res.data.data;

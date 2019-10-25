@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import {DetailWrapper, Header, Content} from "./style";
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
-
+import {withRouter} from 'react-router-dom'
 class Detail extends PureComponent {
 
     componentDidMount() {
@@ -10,7 +10,6 @@ class Detail extends PureComponent {
     }
 
     render() {
-        //console.log(this.props.match.params.id)
         const {title, content} = this.props;
         return (
             <DetailWrapper>
@@ -35,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));
